@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css3元素选择器</title>
+	<style>
+	[id*=baohan]
+	{font-size: 20px;color: red;}
+	[class^=brefore]
+	{font-size: 20px;color: blue;}
+	[id$=after]
+	{font-size: 30px;color:green;}
+	/*first-line*/
+	p:first-line{color:darkgrey;font-size: 20px;}
+	/*before*/
+	li:before{content: "前面加|";color: darkgrey;}
+	/*after*/
+	li:after{content: "|后面加";color: darkgrey;}y
+
+	/* 结构性伪类选择器允许开发者根据文档结构来制定元素的样式 */
+	:root{background-color: darkgrey;}  /* root定义的样式在body之下 */
+	body{background-color: white;}
+ #essay{color: blue;}
+ /* not */
+ :not(h1){color: green;} /* not排除h1给其他的加一个样式 */
+ /*empty*/
+td:empty{background: blue;}； /*  给空位置加一个样式 */
+/*target*/
+:target
+{
+border: 2px solid #D4D4D4;
+background-color: #e5eecc;
+}
+
+	/* 某个target;超链接跳转之后起作用 */
+	</style>
+</head>
+<body>
+<!-- 属性选择器 -->
+<div  id="testbaohantest">{*=}包含这个属性的选择器</div>
+<div  class="breforetest">{^=}首字符开头的样式</div>
+<div  id="testafter">{$=}结束字符的样式</div>
+<!-- 伪类选择器和伪元素选择器 -->
+<div>
+	<p>只给元素的第一行增加样式<br>第二行不给</p>
+</div>
+<ul>
+	<li>菜单1</li>
+	<li>菜单2</li>
+	<li>菜单3</li>
+</ul>
+<!-- 结构性伪类选择器允许开发者根据文档结构来制定元素的样式-->
+<div  id="essay">
+<h1>not排除h1给其他的加一个样式</h1>
+<h2>不排除</h2>
+<h3>不排除</h3>	
+</div>
+<table  border="1">
+<tr  >
+	<td>内容1</td>
+	<td></td>
+	<td>内容1</td>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td>内容1</td>
+</tr>
+<tr>
+	<td></td>
+	<td>内容1</td>
+	<td></td>
+</tr>
+	</table>
+
+	<br>
+	<div>
+<p><a href="#news1">跳转至内容 1</a></p>
+<p><a href="#news2">跳转至内容 2</a></p>
+
+<p>请点击上面的链接，:target 选择器会突出显示当前活动的 HTML 锚。</p>
+
+<p id="news1"><b>内容 1...</b></p>
+<p id="news2"><b>内容 2...</b></p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+.box{width: 400px;height: 100px;border: 2px  blue  solid;float: left;}
+	</style>
+}
+</head>
+<body>
+<div class="box"><!-- 第1格 -->
+	<script>
+	function  setvalue(){
+		var  label=document.getElementById("label");
+		var textbox=label.control;//control的作用
+		textbox.value="1234";
+	}
+</script>
+<form action=""  >
+	<label id ="label">
+	邮编：
+	<input type="tet-zip"  maxlength="6"><!-- 最长为6位 -->
+	<small>请输入六位数字</small>
+	</label>
+	<input type="button"  value="设置默认值"  onclick="setvalue()">
+</form>
+</div>
+
+
+<div class="box"><!-- 第2格 有待研究 -->
+<script>
+	function  AD(){
+		var  add=document.forms[0]['text'];
+		var  Driection=add.selectionDirection;/*获得一个数，有待研究*/
+		alert(Driection);
+	}
+</script>
+<form action="">
+	<input type="test"  name="test">
+	<input type="button"   value="点击我"   onclick="AD()">
+</form>
+</div>
+
+
+<div class="box"><!-- 第3格 -->
+	<form action="">
+		姓名：<input type="text"  name="name"><!-- 表单添加一张图片 -->
+		<input type="image"   alt="图片"  src="2.png"   width="50"  height="50"  border="2px  solid  blue">
+	</form>
+</div>
+<div class="box"><!--第4格-->
+	<form ><!--注意name和submit的用法-->
+	博客地址：
+		<input name="url"  placeholder="http://www.baidu.com"  type="url">
+		<input type="submit"  value="提交"><!--作用：输入不对，提示-->
+	</form>
+</div>
+<div class="box"><!--第5格-->
+	<form action=""><!--提示email的用法-->
+		<input name="email"  type="email"  value="8888@qq.com">
+		<input type="submit"  value="提交">
+	</form>
+</div>
+<div class="box"><!--第6格-->
+		<form action="">
+		<input type="date"  value="2013..03.01"><!-年月日-->
+		<input type="time"   value=""><br><br><!--时间-->
+		<input type="datetime" value=""><!--再研究-->
+		<input type="datetime-local">	<!--本地时间-->
+		<input type="month"  value="2015.03.28"><!--月数-->
+		<input type="week"  ><!--周数-->
+		<input type="number"><!--数字-->
+		</form>
+</div>
+<div class="box"><!--第7格-->
+<script>
+	function  sum(){/*计算器	*/
+		var n1=document.getElementById("num1").valueAsNumber;
+		var n2=document.getElementById("num2").valueAsNumber;
+		//document.getElementById("result").valueAsNumber=n1+n2;
+	document.getElementById("result").value=n1+n2;
+	}
+</script>
+<form action="">
+	<input type="number"  id="num1">
+	+
+	<input type="number"  id="num2">
+   =<input type="number"  id="result"  readonly><!--readonly只读属性-->
+	<input type="button"  value="计算"  onclick="sum()">
+</form>	
+</div>
+<div class="box"><!--第8格-->
+<input type="range"  max="100" value="25"  min-="0"  step="5" >
+<input type="search">
+</div>
+<div class="box"><!--第9格--><!--onchange改变网页颜色属性-->
+<input type="color"  onchange="document.body.style.backgroundColor = document.getElementById('currentColor').textcontent=this.value;">
+	<span  id="currentColor"></span>
+</div>
+
+<div class="box"><!--第10格-->
+<script>
+	function  check(){
+		var email = document.getElementById("email");
+		if(email.value==""){
+			alert("请输入email：");
+			return  false;
+		}else if(!email.checkValidty()){
+			alert("请输入正确的Email地址：");
+			return  false;
+		}
+	}
+</script>
+	<form id="testform"  onsubmit="check()"  novalidate="true">
+	<label  fro="email">Email</label>
+	<input  type="email"  id="email">
+	<input type="submit">	
+	</form>
+</div>
+
+
+<div class="box"><!--第11格-->
+<input id="myCar" list="cars" />
+		<datalist id="cars">
+		  <option value="BMW">
+		  <option value="Ford">
+		  <option value="Volvo">
+		</datalist>
+
+	</div>
+<div class="box"><!--第12格-->
+<details   >
+<summary>Copyright 2011.</summary>
+<p>All pages and graphics on this web site are the property of W3School.</p>
+</details>
+</div>
+
+
+<div class="box"><!--第13格-->
+<script>
+	function  btn(){
+		// for(var i=0;i<=100;i++){
+		// 	setTimeout(function(){
+		// 		updateprogress(i);
+		// 	},100)
+		// }
+		var =0;
+		function thread_one(){
+			if(i<=100){
+				i++;
+				updateprogress(i);
+			}
+		}
+		setInterval(thread_one,100);
+	}
+	function  updateprogress(newValue){
+		var  progressBar =document.getElementById("p");
+		progressBar.value=newValue;
+		progressBar..getElementByTagName("span")[0].textContent = newValue;
+	}
+</script>
+<section>
+	<h2>progress元素的使用</h2>
+	<p>完成的百分比 <progress style=" background-color:#269abc;" id ="p"  max=“100 ></p>
+	<input type="button"  onclick="btn()"  value="点击">
+</section>
+
+</div>
+<div class="box"><!--第11格-->
+	</div>
+<div class="box"><!--第11格-->
+	</div>
+<div class="box"><!--第11格-->
+	</div>
+<div class="box"><!--第11格-->
+	</div>
+
+	
+</body>
+</html>

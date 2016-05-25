@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2D属性</title>
+	<style>
+.box1{width: 200px;height: 200px;background-color:yellow;
+transform:rotate(9deg);/*翻转*/
+-ms-transform:rotate(9deg);
+-moz-transform:rotate(9deg);
+-webkit-transform:rotate(9deg);
+-o-transform:rotate(9deg);
+float: left;
+}
+.box5
+{width: 200px;height: 200px;background-color:yellow;
+transform:rotateX(120deg);/*翻转*/
+-ms-transform:rotateX(120deg);
+-moz-transform:rotateX(120deg);
+-webkit-transform:rotateX(120deg);
+-o-transform:rotateX(120deg);
+float: left;border:2px  solid  blue;}
+.box2{
+	margin-left: 200px;
+	width: 200px;height: 50px;background-color: yellow;
+	transform: scale(2,4);
+-ms-transform: scale(2,4);	/* IE 9 */
+-webkit-transform: scale(2,4);	/* Safari 和 Chrome */
+-o-transform: scale(2,4);	/* Opera */
+-moz-transform: scale(2,4);	/* Firefox */
+transform-origin:0% 0%;/*允许改变位置*/
+	float: left;}
+
+.box3{margin-left: 200px;
+width: 200px;height: 200px;float: left;background-color: yellow;
+transform:skew(30deg,20deg);
+-ms-transform:skew(30deg,20deg); /* IE 9 */
+-moz-transform:skew(30deg,20deg); /* Firefox */
+-webkit-transform:skew(30deg,20deg); /* Safari and Chrome */
+-o-transform:skew(30deg,20deg); /* Opera */
+
+border: 1px solid black;
+perspective:150;
+-webkit-perspective:150; /*？？？？？*/
+}
+.box4{clear: both;
+	width: 200px;height: 200px;background-color:blue;
+	transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+-ms-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* IE 9 */
+-moz-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* Firefox */
+-webkit-transform:matrix(0.966,0.5,-0.5,0.866,0,0); /* Safari and Chrome */
+-o-transform:matrix(0.866,0.5,-0.5,0.866,0,0); /* Opera */
+}
+
+
+</style>
+</head>
+<body>
+	<div class="box1">transform:rotate() 方法翻转属性<br>
+	素顺时针旋转给定的角度。允许负值，元素将逆时针旋转。</div>
+	<div class="box2">值 scale(2,4) 把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 4 倍</div>
+	<div class="box3"> skew(30deg,20deg) 围绕 X 轴把元素翻转 30 度，围绕 Y 轴翻转 20 度。</div>
+	<div class="box4">matrix() 方法把所有 2D 转换方法组合在一起。
+matrix() 方法需要六个参数，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素。</div>
+<div class="box5">rotateX：元素围绕其 X 轴以给定的度数进行旋转。</div>
+
+<div class="box6"></div>
+</body>
+</html>

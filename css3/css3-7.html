@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>UI元素状态选择器</title>
+<style>
+	input[type="text"]:hover{background-color: red;}
+	input[type="text"]:focus{background-color: blue;}
+	input[type="text"]:active{background-color: green;}
+	
+	input[type="checkbox"]:checked{outline: 2px solid  gold;}
+
+	div ~ p {background-color: red;}   /*div 和 p  是同级的兄弟关系*/
+
+</style>
+</head>
+<body>
+<input type="text">
+<input type="text">
+
+<input type="checkbox">阅读
+<input type="checkbox">旅游
+<input type="checkbox">上网
+
+<!-- 通用兄弟元素选择器 -->
+<div>
+	<div>
+	<p>兄弟元素1</p>
+	<p>兄弟元素1</p>
+	<p>兄弟元素1</p>
+	</div>
+	<p>兄弟元素2</p>
+	<p>兄弟元素2</p>
+	<p>兄弟元素2</p>
+
+</div>
+
+
+	
+</body>
+</html>

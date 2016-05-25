@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本  边框  字体</title>
+	<style> 
+p {word-wrap:break-word;}/*长单词进行拆分*/
+@font-face
+{
+font-family: myFirstFont;/*自定义字体的引入*/
+src: url('/example/css3/Sansation_Light.ttf')
+    ,url('/example/css3/Sansation_Light.eot'); /* IE9+ */
+}
+
+h1
+{
+text-shadow: 5px 5px 5px #FF0000;
+}
+.box1
+{
+width:100px;
+height:75px;
+background-color:yellow;
+border:1px solid black;
+border-radius: 30px;/*圆角边框属性*/
+float: left;
+}
+.box2  /*transform  翻转*/
+{
+transform:rotate(30deg);
+-ms-transform:rotate(30deg); /* IE 9 */
+-moz-transform:rotate(30deg); /* Firefox */
+-webkit-transform:rotate(30deg); /* Safari and Chrome */
+-o-transform:rotate(30deg); /* Opera */
+float: left;
+}
+.box3  /*box-shadow  盒子阴影*/
+{
+-moz-box-shadow: 10px 10px 5px #888888; /* 老的 Firefox */
+box-shadow: 10px 10px 5px #888888;
+width: 200px;height: 200px;
+background-color: blue;
+float: left;
+}
+.box4{    /*border-image   边框图片*/
+border:15px solid transparent;
+width:300px;
+height: 200px;
+border-image: url(border.png) 30 30 round;
+-moz-border-image: url(border.png) 30 30 round;
+-webkit-border-image: url(border.png) 30 30 round;
+-o-border-image: url(border.png) 30 30 round;/**/
+float: left;
+}
+.box5{
+	width: 300px;
+	height: 200px;
+	border:15px solid  ;
+	-ms-border-image: url(border.png) 30 30  stretch;/*拉伸*/
+	-moz-border-image: url(border.png) 30 30  stretch;
+	-webkit-border-image: url(border.png) 30 30  stretch;
+	float: left;
+}
+.box6/*background-image    背景图片的覆盖*/
+{
+background-image: url(1.png);
+width: 300px;
+height: 300px;
+background-size: 100%  100%;
+float: left;
+}
+.box7{/*background-origin: border-box;*/
+float: left;
+border:30px solid  red;
+margin: 0 auto;
+height: 300px;
+width: 300px;
+background-image: url(1.png);
+background-size: 200px  200px;
+padding: 50px 50px;
+background-repeat: no-repeat;
+-ms-background-origin: border-box;
+-webkit-background-origin: border-box;
+-moz-background-origin: border-box;
+}
+.box8{
+float: left;
+border:30px solid  red;
+margin: 0 auto;
+height: 300px;
+width: 300px;
+background-image: url(1.png);
+background-size: 200px  200px;
+padding: 50px 50px;
+background-repeat: no-repeat;
+-ms-background-origin:padding-box;
+-webkit-background-origin:padding-box;
+-moz-background-origin:padding-box;
+}
+.box9{
+float: left;
+border:30px solid  red;
+margin: 0 auto;
+height: 300px;
+width: 300px;
+background-image: url(1.png);
+background-size: 200px  200px;
+padding: 50px 50px;
+background-repeat: no-repeat;
+-ms-background-origin:content-box;
+-webkit-background-origin:content-box;
+-moz-background-origin:content-box;
+}
+.box10
+{float: left;
+border:30px solid  red;
+margin: 0 auto;
+height: 300px;
+width: 300px;
+background-image: url(1.png);
+background-size: 200px  200px;
+padding: 50px 50px;
+background-repeat: no-repeat;
+background-clip: content-box; 
+background-origin: border-box; 
+
+-moz-background-clip: content;  /*裁剪只留下content中的内容*/
+-moz-background-origin: border; 
+
+-webkit-background-clip: content; /*裁剪只留下content中的内容*/
+-webkit-background-origin: border; 
+}
+
+</style>
+</head>
+<body>
+	
+<div class="box1">你好。这是一个 div 元素。</div>
+<div class="box2  box1"  >你好。这是一个 div 元素。</div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5"></div>
+<div class="box6"></div>
+<div class="box7"><h1>background-orign:border-box属性</h1></div>
+<div class="box8"><h1>background-orign:padding-box属性</h1></div>
+<div class="box9"><h1>background-orign:content-box属性</h1></div>
+<div class="box10"><h1>background-clip: content裁剪属性</h1></div>
+
+</body>
+</html>

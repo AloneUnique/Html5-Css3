@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>child选择器</title>
+	<style>
+	/*first-child  第一行*/
+	#header li:first-child{background-color: red;}
+	/*last-child  最后一行*/
+	#header li:last-child{background-color: red;}/**/
+	/*nth-child   正数第三行*/
+	#header li:nth-child(3){background-color: blue}
+	/*nth-last-child  倒数第四行*/
+	#header li:nth-last-child(4){background-color: blue}
+
+	/*li:nth-child(odd){background-color: blue}奇数行*/
+	/*li:nth-last-child(odd){background-color: red}/倒数的奇数行*/
+
+	/*li:nth-child(even){background-color: blue}*//*偶数行*/
+	/* li:nth-last-child(even){background-color: blue}倒数偶数行 */
+
+	/*nth-of-type   计算同类的奇数偶数样式*/
+	#container h2:nth-of-type(odd){background-color: yellow}
+	#container h2:nth-of-type(even){background-color: red}
+	
+	/*nte-child(An+B)  根据不同行指定不同样式*/
+	#sss li:nth-child(4n+1){background-color: blue;}
+	#sss li:nth-child(4n+2){background-color: green;}
+	#sss li:nth-child(4n+3){background-color: yellow;}
+	#sss li:nth-child(4n){background-color: red;}
+    /*only-child   仅对一个一行起作用*/
+	.footer  li:only-child{background-color: red;}
+
+	</style>
+</head>
+d>
+<body>
+<div  id="header">
+<ul>
+	<li>列表1</li>	
+	<li>列表1</li>
+	<li>列表1</li>	
+	<li>列表1</li>
+	<li>列表1</li>	
+</ul>
+</div>
+<div  id="container">
+<h2>文章标题</h2>
+<p>正文</p>
+<h2>文章标题</h2>
+<p>正文</p>
+<h2>文章标题</h2>
+<p>正文</p>
+<h2>文章标题</h2>
+<p>正文</p>
+<h2>文章标题</h2>
+<p>正文</p>
+<h2>文章标题</h2>
+<p>正文</p>
+</div>
+
+<div id ="sss">
+<ul>
+	<li>列表1</li>
+	<li>列表2</li>	
+	<li>列表3</li>
+	<li>列表4</li>
+	
+	<li>列表1</li>
+	<li>列表2</li>	
+	<li>列表3</li>
+	<li>列表4</li>
+
+	<li>列表1</li>
+	<li>列表2</li>	
+	<li>列表3</li>
+	<li>列表4</li>
+
+	<li>列表1</li>
+	<li>列表2</li>	
+	<li>列表3</li>
+	<li>列表4</li>
+	</div>
+
+<div class="footer">
+<ul>
+			<li>菜单1</li>
+</ul>
+<ul>
+	<li>菜单一</li>
+</ul>
+<ul>
+	<li>标题1</li>
+	<li>标题2</li>
+	<li>标题3</li>
+	<li>标题4</li>
+</ul>
+
+	</div>
+	</body>
+</html>

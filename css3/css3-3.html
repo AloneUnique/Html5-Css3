@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>transition</title>
+<style>
+.kong{width: 200px;height: 100px;float: left;text-align: center;line-height: 100px;}
+.box0{width:100px;
+height:100px;
+background:yellow;
+float: left;}
+.box1
+{width:100px;
+height:100px;
+background:yellow;
+float: left;
+/*transition-property:规定应用过渡的css属性的名称:例width;
+transition-duration: 2s;过渡效果花费的时间
+transition-timing-function:liner;规定过度效果花费的时间，默认是ease;
+transition-delay:2s;延迟2秒*/
+
+/*简写：transition:width  2s  liner 2s;*/
+transition:width 2s;
+-moz-transition:width 2s; /* Firefox 4 */
+-webkit-transition:width 2s; /* Safari and Chrome */
+-o-transition:width 2s; /* Opera */
+-ms-transition:width 2;
+
+}
+.box1:hover
+{width: 300px;}
+
+.box2{
+height: 100px;width: 100px;background-color: blue;float:left;
+transition: width 2s, height 2s,transform 2s,background-color 2s,margin-left 2s;
+}
+.box2-2{height:100px;width: 100px;background-color: blue;float: left;clear: left;}
+.box2:hover{
+	width: 200px;height: 200px;
+	-moz-transform:rotateX(180deg);
+	-webkit-transform:rotateX(180deg);
+	transform:rotate(180deg);
+	background-color: red;
+	margin-left: 200px;
+}
+
+.box3-3
+{width:100px;height:100px;background:green;clear: left;float: left; }
+.box3{
+width:100px;height:100px;background:green;float: left;
+transition:width 2s;
+transition-timing-function:linear;
+
+
+-webkit-transition:width 2s;
+-webkit-transition-timing-function:linear;/*定义变化速度和回变速度相同*/
+/*该属性允许过渡效果随着时间来改变其速度。*/
+}
+.box3:hover
+{width: 400px;}
+
+
+
+/*animation：简写属性
+animation-name:动画名字；
+animation-duration；规定动画完成一个周期所需时间，默认是0
+animation-timing-function:动画的速度曲线
+animation-delay:延迟
+animation-iteration-count:规定动画播放次数;
+animation-direction：规定动画下一周期逆向的播放，默认是“normal”  alternate;
+animation-play-state规定动画正在运行或暂停。默认是“running”
+animation-fill-mode:规定对象动画时间之外的状态; */
+
+
+/*animation  和 keyframes 搭配实现动态效果 */
+.box4{width: 100px;height:100px;clear: left;border: 1px solid  blue;float: left;
+	animation:  first  5s;
+	-moz-animation:  first  5s;
+	-webkit-animation:  first  5s;
+	-o-animation:  first  5s;
+}
+@keyframes  first{from{background-color: blue;}to{background-color: red;}}
+@-webkit-keyframes  first{from{background-color: blue;}to{background-color: red;}}/**from  to*/
+
+.box5{width: 100px;height:100px;border: 1px solid  blue;float: left;
+	animation:  second  5s;
+	-moz-animation:  second  5s;
+	-webkit-animation:  second  5s;
+	-o-animation:  second  5s;
+}
+@keyframes  second{
+	0%{background-color: red;}
+	25%{background-color: yellow;}
+	50%{background-color: blue;}
+	100%{background-color: green;}
+}
+
+@-webkit-keyframes  second{0%{background-color: red;}25%{background-color: yellow;}50%{background-color: blue;}100%{background-color: green;}}
+
+
+.box6
+{width: 100px;height: 100px;background-color: blue;float: left;position: relative;clear: both;
+animation:  aaa 5s;
+-webkit-animation:  aaa 5s;
+-webkit-animation-iteration-count:100;}/**循环播放*/
+@keyframes  aaa{
+	0%{background-color: red;top:0px;left: 200px;}
+	25%{background-color: yellow;top:200px;left: 100px;}
+	50%{background-color: blue;top: 0px;left: 100px;}
+	100%{background-color: green;top:0px;left: 0px;}
+}
+@-webkit-keyframes  aaa{
+	0%{background-color: red;top:0px;left: 200px;}
+	25%{background-color: yellow;top:200px;left: 100px;}
+	50%{background-color: blue;top: 0px;left: 100px;}
+	100%{background-color: green;top:0px;left: 0px;}
+}
+
+
+.box7
+{width: 100px;height: 100px;background-color: blue;float: left;position: relative;
+animation:  bbb 5s;
+-webkit-animation:  bbb 5s;
+-webkit-animation-iteration-count:100;/**循环播放100次*/
+-webkit-animation-direction:alternate;}/*规定动画下一周期逆向播放*/
+
+@-webkit-keyframes bbb{
+	0%{background-color: red;top:0px;left: 200px;width: 200px;height: 200px;}
+	25%{background-color: yellow;top:200px;left: 100px;-webkit-transform:rotateX(180deg);}
+	50%{background-color: blue;top: 0px;-webkit-transform:rotateY(180deg);left: 100px;}
+	100%{background-color: green;top:0px;left: 0px;}
+}
+
+.box8
+{-webkit-transform:scale(2,2);width: 100px;height: 100px;clear: both;background-color: blue;float: left;}
+
+
+.box9{width: 200px;height: 200px;background-color: red;transform: skew(30deg,20deg);float: left;}
+
+.box10{width: 100px;height: 100px;background-color: blue;clear: both;float: left;position: relative;
+-webkit-animation:ccc;
+-webkit-animation-duration:5s;
+-webkit-animation-delay:1s;
+-webkit-animation-iteration-count: infinite;/**播放次数*/
+-webkit-animation-direction:alternate;
+-webkit-animation-play-state: running;
+}
+@-webkit-keyframes  ccc{0%{background-color: red;top:0px;left: 200px;width: 200px;height: 200px;}
+	25%{background-color: yellow;top:200px;left: 100px;-webkit-transform:rotateX(180deg);}
+	50%{background-color: blue;top: 0px;-webkit-transform:rotateY(180deg);left: 100px;}
+	100%{background-color: green;top:0px;left: 0px;}}
+</style>
+</head>
+<body>
+<div class="box0">box0 <br><h6>空</h6></div>
+<div class="kong"><<==========>></div>
+<div class="box1">box1::: <h6>transition:width 2s属性</h6></div><!--transition:width  2s;变化div宽度-->
+
+
+
+
+<div class="box3-3">box3-3 <br>  <h6>空</h6></div>
+<div class="kong"><<==========>></div>
+<div class="box3">box3-3<br>  <h6>transition-timing-function:linear;属性  规定过渡效果的时间曲线</h6></div><!--transition-timing-function:linear-->
+
+
+<div class="box4">box4</div><!-- animation:name  2s;  @keyframes name{from..to..} -->
+<div class="kong"><<==========>></div>	
+<div class="box5">box5</div><!-- animation:name  5s;-->
+
+
+
+<div style="float: right;width: 800px;height: 600px;position: absolute;margin-left: 500px;">
+
+<div class="box2-2">box2-2</div>
+<div class="kong"><<==========>></div>
+<div class="box2">box2:::::transition属性的综合运用</div><!--transform:rotateX(180deg)轮转属性的应用-->
+<div class="box6">box6</div><!--animation:  name 5s;  @keyframes  name{0 25 left  50 100}-->
+<div class="kong"><<==========>></div>
+<div class="box7">box7</div><!--animation:  name 5s;  @keyframes  name{width,height,transform:rotateX(180deg)}-->
+<div class="box10">box10</div>
+</div>
+
+<div style="position: relative;top:60px;">
+ <div class="box8">box8 <h6>transfom:scale(2,4)</h6></div> <!-- transform:scale(2,4);   值 scale(2,4) 把宽度转换为原始尺寸的 2 倍，把高度转换为原始高度的 4 倍。-->
+ <div class="kong"><<==========>></div>  
+ <div class="box9">box9  看我，我翻转了 <br> <h6>transform: skew(30deg,20deg);</h6></div></div>
+
+
+<!--column-count:3;行数
+column-gap:40px;行间距
+column-rule:3px outset #ff0000;column-rule 属性设置列之间的宽度、样式和颜色规则。
+column-span::设置标题横跨列数
+column-width::规定列的宽度-->
+ <style>.newspaper
+{
+-moz-column-count:3; /* Firefox */
+-webkit-column-count:3; /* Safari and Chrome */
+column-count:3;
+clear:both;
+float: left;
+column-width:100px;
+-moz-column-width:100px; /* Firefox */
+-webkit-column-width:100px;
+-webkit-column-gap:40px;
+-webkit-column-rule:3px outset #ff0000;	/* Safari and Chrome */
+-webkit-column-rule:3px outset #ff0000;/*column-rule 属性设置列之间的宽度、样式和颜色规则。3px代表竖线宽度*/
+}
+h2{
+-webkit-column-span:all ; /* Chrome */
+column-span:all;
+}
+</style>
+
+<div class="newspaper">
+<h2>成品油价格25日凌晨上调 汽柴油涨300、290元/吨</h2>
+成品油价格25日凌晨上调 汽柴油涨300、290元/吨成品油价格25日凌晨上调 汽柴油涨300、290元/吨人民网北京2月24日电 (记者 刘阳)国家发展改革委近日发出通知，决定自2月25日零时起将汽、柴油价格每吨分别提高300元和290元，折算到90号汽油和0号柴油（全国平均）每升零售价格分别提高0.22元和0.25元。 此次国内成品油价格调整幅度，是按照现行国内成品油价格形成机制，根据国际市场油价变化情况确定的。去年11月16日国内成品油价格调整以来，受市场预期欧美经济复苏前景向好以及中东局势持续动荡等因素影响，国际市场原油价格先抑后扬，2月上旬WTI和布伦特原油期货价格再次回升至每桶95美元和115美元以上。虽然近两日价格有所回落，但国内油价挂钩的国际市场三种原油连续22个工作日移动平均价格上涨幅度已超过4%，达到国内成品油价格调整的边界条件。 通知指出，这次成品油调价后，国家将按照已建立的补贴机制，继续对种粮农民、渔业（含远洋渔业）、林业、城市公交、农村道路客运（含岛际和农村水路客运）等给予补贴。同时，为保证市场物价基本稳定，防止连锁涨价，对与居民生活密切相关的铁路客运、城市公交、农村道路客运（含岛际和农村水路客运）价格不作调整。 通知要求，中石油、中石化、中海油三大公司要组织好成品油生产和调运，保持合理库存，加强综合协调和应急调度，保障成品油供应。各级价格主管部门要加大市场监督检查力度，依法查处不执行国家价格政策，以及囤积居奇、造谣惑众、合谋涨价、搭车涨价等违法行为，维护正常市场秩序。</div>
+
+
+
+</body>
+</html>
